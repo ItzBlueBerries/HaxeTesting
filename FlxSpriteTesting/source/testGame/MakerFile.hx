@@ -330,13 +330,13 @@ class MakerFile extends FlxState
                 FlxG.resetGame();
                 trace('The makerfile has already been destroyed. :)');
             }
-        else
+        /*else
             {
                 FlxG.resetGame();
                 trace("The MakerFile is too dangerous.. cheat by compiling the source code AND changing it at https://github.com/ItzBlueBerries/HaxeTesting/FlxSpriteTesting/");
-            }
+            }/
 
-        if (!FlxG.save.data.makerFileDestroyed) // just in case lol
+        /*if (!FlxG.save.data.makerFileDestroyed) // just in case lol
             FlxG.resetGame();
         else
             FlxG.resetGame();
@@ -344,9 +344,9 @@ class MakerFile extends FlxState
         if (FlxG.save.data.makerFileDestroyed == null) // just in case again lol
             FlxG.resetGame();
         else
-            FlxG.resetGame();
+            FlxG.resetGame();*/
 
-        FlxG.resetGame(); // keep your ass out lmao
+        // FlxG.resetGame(); // keep your ass out lmao
 
         bg = new FlxSprite(0,0).makeGraphic(1280, 720, FlxColor.WHITE);
         bg.alpha = 0.25;
@@ -398,7 +398,7 @@ class MakerFile extends FlxState
                         removeErrors();
                         trace("System restart initiated.");
                         FlxG.save.data.makerFileDestroyed = true;
-                        FlxG.save.bind('HaxeTesting', 'FruitsyOG');
+                        FlxG.save.flush();
                         Sys.sleep(15);
                         trace("MakerFile Cleared. System Cleaned. MakerFile.hx Disabled. Back to Normal.");
                         Sys.exit(0);
